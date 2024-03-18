@@ -6,8 +6,8 @@ import  ComponentBody  from '~/components/ComponentBody.vue';
 
 <template>
   <ComponentHeader />
-  <ComponentBody />
-  <ComponentFooter />
+  <!-- <ComponentBody /> -->
+  <!-- <ComponentFooter /> -->
 </template>
 
 <style>
