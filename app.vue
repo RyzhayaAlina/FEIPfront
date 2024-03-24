@@ -1,21 +1,42 @@
 <script>
-import ComponentHeader from '~/components/ComponentHeader.vue'
-import ComponentFooter from '~/components/ComponentFooter.vue'
-import  ComponentBody  from '~/components/ComponentBody.vue';
+import ComponentHeader from "~/components/ComponentHeader.vue";
+import ComponentFooter from "~/components/ComponentFooter.vue";
+import ComponentBody from "~/components/ComponentBody.vue";
 </script>
 
 <template>
-  <ComponentHeader />
-  <!-- <ComponentBody /> -->
-  <!-- <ComponentFooter /> -->
+  <div class="root">
+    <ComponentHeader />
+    <ComponentBody />
+    <ComponentFooter />
+  </div>
 </template>
 
 <style>
-html, body {
+@import "reset-css";
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
+
+html,
+body,
+#__nuxt,
+.root {
+  height: 100%;
+}
+
+.root {
+  display: flex;
+  flex-flow: column;
+}
+.header,
+.footer {
+  flex-shrink: 0;
+}
+.body {
+  flex-grow: 1;
+}
 </style>
-
-
-

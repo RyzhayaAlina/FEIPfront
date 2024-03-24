@@ -7,7 +7,7 @@ export default defineNuxtConfig({
        'Open Sans': true,
         'Montserrat': true,
       }
-    }],
+    },], 'nuxt-svgo'
   ],
  
 })

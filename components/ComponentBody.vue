@@ -4,19 +4,19 @@
 
 <template>
     <div class="base">
-        <div class="banner">
+        <!-- <div class="banner">
             <p class="text_banner">Banner</p>
-        </div>
+        </div> -->
         <div class="block_message">
             <p class="hello">Hello, World!</p>
         </div>
-        <div class="block_message">
+        <!-- <div class="block_message">
             <p class="look">Look at my website</p>
-        </div>
-        <div class="cards">
+        </div> -->
+        <!-- <div class="cards">
             <p class="card">Here</p>
             <p class="card">And here</p>
-        </div>
+        </div> -->
     </div>
 </template>
 
