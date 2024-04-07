@@ -1,37 +1,42 @@
+<script>
+import ComponentHeader from "~/components/ComponentHeader.vue";
+import ComponentFooter from "~/components/ComponentFooter.vue";
+import ComponentBody from "~/components/ComponentBody.vue";
+</script>
+
 <template>
-  <div>
-    <h1 class="title">Hello, world!</h1>
+  <div class="root">
+    <ComponentHeader />
+    <ComponentBody />
+    <ComponentFooter />
   </div>
 </template>
 
-<script>
-console.log("Hello, world!");
-</script>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Open+Sans:ital,wdth@0,75..100;1,75..100&display=swap');
+@import "reset-css";
 
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.open-sans {
-  font-family: 'Open Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: 'wdth';
+html,
+body,
+#__nuxt,
+.root {
+  height: 100%;
 }
 
-.title {
-  font-family: Montserrat;
-  color: rgb(255, 80, 214);
-  font-size: 50px;
-  text-decoration: line-through;
-  text-shadow: 2px 2px 2px rgb(80, 133, 255);
+.root {
+  display: flex;
+  flex-flow: column;
+}
+.header,
+.footer {
+  flex-shrink: 0;
+}
+.body {
+  flex-grow: 1;
 }
 </style>
