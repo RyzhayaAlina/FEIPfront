@@ -6,9 +6,9 @@ import ComponentBody from "~/components/ComponentBody.vue";
 
 <template>
   <div class="root">
-    <ComponentHeader />
-    <ComponentBody />
-    <ComponentFooter />
+    <ComponentHeader class="header" />
+    <ComponentBody class="body" />
+    <ComponentFooter class="footer" />
   </div>
 </template>
 

@@ -1,7 +1,8 @@
 <script setup>
 import DarkEmblem from "assets/icons/DarkEmblem.svg?skipsvgo";
 import Button_Apply from "~/components/Button_Apply.vue";
-import Button_Menu from "~/components/Button_Menu.vue";
+import Drawer from "~/components/Drawer.vue";
+
 const nav = [
   {
     url: "/projects",
@@ -20,52 +21,61 @@ const nav = [
 
 <template>
   <header class="header">
-    <div class="title">
-      <DarkEmblem />
-      <nav>
-        <ul class="names_titles">
-          <li v-for="item in nav">
-            <a :href="item.url">
-              {{ item.label }}
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="data">
-      <div class="box_number">
-        <a class="number" href="tel:88001234567"
-          ><SvgoPhoneIcon class="icon_number" />+7 (900) 900-90-90</a
-        >
+    <div class="container-header">
+      <div class="title">
+        <DarkEmblem class="draw-emblem" />
+        <nav>
+          <ul class="names_titles">
+            <li v-for="item in nav">
+              <a :href="item.url">
+                {{ item.label }}
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <Button_Apply class="apply" />
-      <!-- <Button_Menu class="drawer" /> -->
+      <div class="data">
+        <div class="box_number">
+          <a class="number" href="tel:88001234567">
+            <SvgoPhoneIcon class="icon_number" />+7 (900) 900-90-90</a
+          >
+        </div>
+        <div class="apply-button"><Button_Apply /></div>
+        <Drawer class="drawer" />
+      </div>
     </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
 .header {
-  // background: #c4b8b8;
   height: 97px;
   display: flex;
   align-items: center;
-  margin: 0px 88px 0px 88px;
+}
+.container-header {
+  display: flex;
+  align-items: center;
+  margin: 24px 88px 24px 88px;
   justify-content: space-between;
   max-width: 1264px;
   width: 100%;
   padding-inline: 1rem;
 }
 
+.draw-emblem {
+  width: 160px;
+  max-width: 160px;
+  min-width: 160px;
+}
+
 .title {
-  height: 39px;
   gap: 80px;
   display: flex;
   align-items: center;
 }
 
 .names_titles {
-  gap: 24px;
   display: flex;
   list-style-type: none;
   padding: 0;
@@ -78,10 +88,10 @@ const nav = [
   text-decoration: none;
   font-size: 16px;
   white-space: nowrap;
+  padding-left: 24px;
 }
 
 .data {
-  height: 49px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -107,13 +117,9 @@ const nav = [
   white-space: nowrap;
 }
 
-.apply {
-  display: initial;
+.drawer {
+  display: none;
 }
-
-// .drawer {
-//   display: none;
-// }
 
 @media screen and (max-width: 1100px) {
   .header {
@@ -121,12 +127,23 @@ const nav = [
   }
   .title {
     gap: 40px;
-   
   }
 
+  .container-header {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 @media screen and (max-width: 900px) {
   .names_titles {
+    display: none;
+  }
+
+  .drawer {
+    display: inline-block;
+  }
+
+  .apply-button {
     display: none;
   }
 }
@@ -135,13 +152,5 @@ const nav = [
   .number {
     display: none;
   }
-  .apply {
-    display: none;
-  }
-
-  // .drawer {
-  //   display: inline;
-  // }
-
 }
 </style>

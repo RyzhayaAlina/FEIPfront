@@ -49,7 +49,7 @@ import { Icon } from "@iconify/vue";
   </DialogRoot>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /* reset */
 button,
 fieldset,
@@ -191,6 +191,7 @@ input {
 }
 
 .button_apply {
+  display: inline-block;
   background-color: #029f59;
   border: none;
   gap: 10px;
@@ -200,8 +201,8 @@ input {
   color: #ffffff;
   font-size: 14px;
   text-align: center;
-  justify-self: end;
-  align-self: flex-start;
+  width: 120px;
+  height: 19px;
 }
 
 .button_apply:hover {
