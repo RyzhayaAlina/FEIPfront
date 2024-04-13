@@ -1,6 +1,7 @@
 <script setup>
 import DarkEmblem from "assets/icons/DarkEmblem.svg?skipsvgo";
-
+import Button_Apply from "~/components/Button_Apply.vue";
+import Button_Menu from "~/components/Button_Menu.vue";
 const nav = [
   {
     url: "/projects",
@@ -37,20 +38,23 @@ const nav = [
           ><SvgoPhoneIcon class="icon_number" />+7 (900) 900-90-90</a
         >
       </div>
-      <button class="button_apply">Оставить заявку</button>
+      <Button_Apply class="apply" />
+      <!-- <Button_Menu class="drawer" /> -->
     </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
 .header {
-  background: #ffffff;
+  // background: #c4b8b8;
   height: 97px;
   display: flex;
   align-items: center;
-  margin: 0 88px 0;
+  margin: 0px 88px 0px 88px;
   justify-content: space-between;
-  // background-color: #bbdacc;
+  max-width: 1264px;
+  width: 100%;
+  padding-inline: 1rem;
 }
 
 .title {
@@ -63,9 +67,9 @@ const nav = [
 .names_titles {
   gap: 24px;
   display: flex;
-  justify-content: space-evenly;
   list-style-type: none;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .names_titles a {
@@ -73,18 +77,20 @@ const nav = [
   color: #666666;
   text-decoration: none;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .data {
   height: 49px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 24px;
 }
 
 .box_number {
   gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .icon_number {
@@ -98,17 +104,44 @@ const nav = [
   text-decoration: none;
   color: #254741;
   font-size: 15px;
+  white-space: nowrap;
 }
 
-.button_apply {
-  background-color: #029f59;
-  border: none;
-  padding: 16px 40px;
-  gap: 10px;
-  border-radius: 10px;
-  font-family: "Montserrat";
-  color: #ffffff;
-  font-size: 14px;
-  text-align: center;
+.apply {
+  display: initial;
+}
+
+// .drawer {
+//   display: none;
+// }
+
+@media screen and (max-width: 1100px) {
+  .header {
+    gap: 40px;
+  }
+  .title {
+    gap: 40px;
+   
+  }
+
+}
+@media screen and (max-width: 900px) {
+  .names_titles {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .number {
+    display: none;
+  }
+  .apply {
+    display: none;
+  }
+
+  // .drawer {
+  //   display: inline;
+  // }
+
 }
 </style>
