@@ -43,10 +43,10 @@ const nav = [
         </div>
         <div class="apply-footer"><Button_Apply /></div>
       </div>
-      <div class="additional-part">
+      <div class="additional_part">
         <p class="Information_company"> © Загдом, 2021</p>
-        <a class="Information_buttom" href="#">Политика конфиденциальности</a>
-        <a class="Information_buttom" href="#">Пользовательское соглашение</a>
+        <a class="Information_buttom_pol" href="#">Политика конфиденциальности</a>
+        <a class="Information_buttom_sogl" href="#">Пользовательское соглашение</a>
       </div>
     </div>
   </footer>
@@ -81,9 +81,9 @@ const nav = [
   justify-content: space-between;
 }
 
-.additional-part {
+.additional_part {
   display: flex;
-  gap: 80px;
+  gap: 75px;
 }
 
 .apply-footer {
@@ -135,9 +135,21 @@ const nav = [
   size: 8px;
   font-family: "Open Sans";
   white-space: nowrap;
+  padding-left: 5px;
+
 }
 
-.Information_buttom {
+.Information_buttom_pol {
+  color: #ffffff;
+  opacity: 60%;
+  size: 8px;
+  font-family: "Open Sans";
+  text-decoration: none;
+  white-space: nowrap;
+  padding-left: 95px;
+}
+
+.Information_buttom_sogl {
   color: #ffffff;
   opacity: 60%;
   size: 8px;
@@ -175,9 +187,15 @@ const nav = [
     gap: 40px;
   }
 
-  .additional-part {
+  .additional_part {
     margin-top: 0px;
     gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Information_buttom_pol {
+    padding-left: 0;
   }
 
   .footer {
