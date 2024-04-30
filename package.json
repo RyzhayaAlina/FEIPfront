@@ -14,6 +14,7 @@
     "nuxt-swiper": "^1.2.2",
     "radix-vue": "^1.5.3",
     "reset-css": "^5.0.2",
+    "truncate-html": "^1.1.1",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
   },

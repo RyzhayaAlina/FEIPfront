@@ -18,52 +18,55 @@ const nav = [
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="main-footer">
     <div class="container-footer">
-      <div class="main-part">
-        <LightEmblem class="light-emblem" />
-        <ul class="names_titles_footer">
-          <li v-for="item in nav">
-            <a :href="item.url">
-              {{ item.label }}
-            </a>
-          </li>
-        </ul>
-        <div class="Information_connection">
-          <a class="Information_tel_mail_loc" href="tel:88001234567"
-            ><SvgoPhoneIcon class="icons_color" />+7 (900) 900-90-90</a
-          >
-          <a class="Information_tel_mail_loc" href="mailto:info@gmail.com"
-            ><SvgoMessageIcon class="icons_color" />info@gmail.com</a
-          >
-          <a class="Information_tel_mail_loc"
-            ><SvgoAdressIcon class="icons_color" />г. Владивосток ул. Выселковая
-            49, стр. 3</a
-          >
-        </div>
-        <div class="apply-footer"><Button_Apply /></div>
+      <LightEmblem class="light-emblem" />
+      <ul class="names_titles_footer">
+        <li v-for="item in nav">
+          <a :href="item.url">
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+      <div class="Information_connection">
+        <a class="Information_tel_mail_loc" href="tel:88001234567"
+          ><SvgoPhoneIcon class="icons_color" />+7 (900) 900-90-90</a
+        >
+        <a class="Information_tel_mail_loc" href="mailto:info@gmail.com"
+          ><SvgoMessageIcon class="icons_color" />info@gmail.com</a
+        >
+        <a class="Information_tel_mail_loc"
+          ><SvgoAdressIcon class="icons_color" />г. Владивосток ул. Выселковая
+          49, стр. 3</a
+        >
       </div>
-      <div class="additional_part">
-        <p class="Information_company"> © Загдом, 2021</p>
-        <a class="Information_buttom_pol" href="#">Политика конфиденциальности</a>
-        <a class="Information_buttom_sogl" href="#">Пользовательское соглашение</a>
-      </div>
+      <div class="apply-footer"><Button_Apply /></div>
+      <p class="Information_company">© Загдом, 2021</p>
+      <a class="Information_buttom_pol" href="#">Политика конфиденциальности</a>
+      <a class="Information_buttom_sogl" href="#"
+        >Пользовательское соглашение</a
+      >
     </div>
   </footer>
 </template>
 
 <style lang="scss">
-.footer {
+.main-footer {
   background: #254741;
   display: flex;
-  height: 264px;
+  justify-content: center;
+  min-height: 264px;
   width: 100%;
 }
 
 .container-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: pink;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "logo menu information button"
+    "company policy agree";
+  grid-gap: 32px;
   max-width: 1264px;
   width: 100%;
   padding-inline: 1rem;
@@ -71,28 +74,15 @@ const nav = [
 }
 
 .light-emblem {
+  grid-area: logo;
   width: 160px;
   max-width: 160px;
   min-width: 160px;
 }
 
-.main-part {
-  display: flex;
-  justify-content: space-between;
-}
-
-.additional_part {
-  display: flex;
-  gap: 75px;
-}
-
-.apply-footer {
-  display: inline-block;
-}
-
 .names_titles_footer {
+  grid-area: menu;
   gap: 24px;
-  padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
@@ -106,18 +96,11 @@ const nav = [
   font-size: 15px;
 }
 
-.icons_color {
-  color: #029f59;
-  width: 16px;
-  max-width: 16px;
-  min-width: 16px;
-}
-
 .Information_connection {
+  grid-area: information;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding-top: 10px;
 }
 
 .Information_tel_mail_loc {
@@ -129,82 +112,117 @@ const nav = [
   font-size: 14px;
 }
 
-.Information_company {
-  color: #ffffff;
-  opacity: 60%;
-  size: 8px;
-  font-family: "Open Sans";
-  white-space: nowrap;
-  padding-left: 5px;
+.apply-footer {
+  grid-area: button;
+}
 
+.Information_company {
+  grid-area: company;
 }
 
 .Information_buttom_pol {
-  color: #ffffff;
-  opacity: 60%;
-  size: 8px;
-  font-family: "Open Sans";
-  text-decoration: none;
-  white-space: nowrap;
-  padding-left: 95px;
+  grid-area: policy;
 }
 
 .Information_buttom_sogl {
-  color: #ffffff;
-  opacity: 60%;
-  size: 8px;
-  font-family: "Open Sans";
-  text-decoration: none;
-  white-space: nowrap;
+  grid-area: agree;
 }
 
-@media screen and (max-width: 1100px) {
-  .footer {
-    gap: 40px;
-  }
+// .apply-footer {
+  // grid-area: button;
+  // display: inline-block;
+// }
 
-  .container-footer {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-}
+// .names_titles_footer {
+//   grid-area: menu;
+// }
 
-@media screen and (max-width: 1130px) {
-  
-  .light-emblem, 
-  .names_titles_footer, 
-  .Information_connection {
-    margin-right: 25px;
-  }
-}
 
-@media screen and (max-width: 800px) {
-  .main-part, .additional-part {
-    flex-direction: column;
-  }
+// .icons_color {
+//   color: #029f59;
+//   width: 16px;
+//   max-width: 16px;
+//   min-width: 16px;
+// }
 
-  .main-part {
-    gap: 40px;
-  }
 
-  .additional_part {
-    margin-top: 0px;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-  }
 
-  .Information_buttom_pol {
-    padding-left: 0;
-  }
+// .Information_company {
+//   grid-area: company;
+//   color: #ffffff;
+//   opacity: 60%;
+//   size: 8px;
+//   font-family: "Open Sans";
+//   white-space: nowrap;
+// }
 
-  .footer {
-    height: 633px;
-  }
+// .Information_buttom_pol {
+//   grid-area: policy;
+//   color: #ffffff;
+//   opacity: 60%;
+//   size: 8px;
+//   font-family: "Open Sans";
+//   text-decoration: none;
+//   white-space: nowrap;
+// }
 
-  .container-footer {
-    margin: 40px;
-    gap: 40px;
-  }
-}
+// .Information_buttom_sogl {
+//   grid-area: agree;
+//   color: #ffffff;
+//   opacity: 60%;
+//   size: 8px;
+//   font-family: "Open Sans";
+//   text-decoration: none;
+//   white-space: nowrap;
+// }
+
+// @media screen and (max-width: 1100px) {
+//   .footer {
+//     gap: 40px;
+//   }
+
+//   .container-footer {
+//     margin-left: 0px;
+//     margin-right: 0px;
+//   }
+// }
+
+// @media screen and (max-width: 1130px) {
+//   .light-emblem,
+//   .names_titles_footer,
+//   .Information_connection {
+//     margin-right: 25px;
+//   }
+// }
+
+// @media screen and (max-width: 800px) {
+//   .main-part,
+//   .additional-part {
+//     flex-direction: column;
+//   }
+
+//   .main-part {
+//     gap: 40px;
+//   }
+
+//   .additional_part {
+//     margin-top: 0px;
+//     gap: 16px;
+//     display: flex;
+//     flex-direction: column;
+//   }
+
+//   .Information_buttom_pol {
+//     padding-left: 0;
+//   }
+
+//   .footer {
+//     height: 633px;
+//   }
+
+//   .container-footer {
+//     margin: 40px;
+//     gap: 40px;
+//   }
+// }
 </style>

@@ -61,6 +61,7 @@ input {
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
 }
 
 .DialogContent {
@@ -81,6 +82,7 @@ input {
   align-items: center;
   flex-direction: column;
   gap: 16px;
+  z-index: 2;
 }
 
 .DialogPartInput {
@@ -205,13 +207,28 @@ input {
   height: 19px;
 }
 
+// .button_apply:default {
+//   background-color: #2b2f34;
+// }
+
+.button_apply:focus {
+  box-shadow: 0 0 0 2px #029f59;
+  background-color: #254741;
+}
+
 .button_apply:hover {
   background-color: #254741;
-  box-shadow: 0 0 0 2px #029f59;
 }
-.button_apply:focus {
-  // box-shadow: 0 0 0 2px #029f59;
-  background-color: #2B2F34;
+
+.button_apply:active {
+  background-color: #029f59;
+}
+
+.button_apply:disabled {
+  background-color: #ffffff;
+  color: #9d9c9c;
+  border-color: #9d9c9c;
+  border: 1px;
 }
 
 .IconButton {
