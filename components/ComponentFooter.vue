@@ -50,7 +50,7 @@ const nav = [
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-footer {
   background: #254741;
   display: flex;
@@ -60,12 +60,11 @@ const nav = [
 }
 
 .container-footer {
-  background-color: pink;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     "logo menu information button"
-    "company policy agree";
+    "company policy agree .";
   grid-gap: 32px;
   max-width: 1264px;
   width: 100%;
@@ -84,7 +83,6 @@ const nav = [
   grid-area: menu;
   gap: 24px;
   display: flex;
-  justify-content: space-evenly;
   list-style-type: none;
   flex-direction: column;
 }
@@ -114,6 +112,7 @@ const nav = [
 
 .apply-footer {
   grid-area: button;
+  justify-self: end;
 }
 
 .Information_company {
@@ -128,101 +127,80 @@ const nav = [
   grid-area: agree;
 }
 
-// .apply-footer {
-  // grid-area: button;
-  // display: inline-block;
-// }
+.icons_color {
+  color: #029f59;
+  width: 16px;
+  max-width: 16px;
+  min-width: 16px;
+}
 
-// .names_titles_footer {
-//   grid-area: menu;
-// }
+.Information_company {
+  grid-area: company;
+  color: #ffffff;
+  opacity: 60%;
+  size: 8px;
+  font-family: "Open Sans";
+  white-space: nowrap;
+}
 
+.Information_buttom_pol {
+  grid-area: policy;
+  color: #ffffff;
+  opacity: 60%;
+  size: 8px;
+  font-family: "Open Sans";
+  text-decoration: none;
+}
 
-// .icons_color {
-//   color: #029f59;
-//   width: 16px;
-//   max-width: 16px;
-//   min-width: 16px;
-// }
+.Information_buttom_sogl {
+  grid-area: agree;
+  color: #ffffff;
+  opacity: 60%;
+  size: 8px;
+  font-family: "Open Sans";
+  text-decoration: none;
+}
 
+@media screen and (max-width: 1100px) {
+  .footer {
+    gap: 40px;
+  }
 
+  .container-footer {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
 
-// .Information_company {
-//   grid-area: company;
-//   color: #ffffff;
-//   opacity: 60%;
-//   size: 8px;
-//   font-family: "Open Sans";
-//   white-space: nowrap;
-// }
+@media screen and (max-width: 1130px) {
+  .light-emblem,
+  .names_titles_footer,
+  .Information_connection {
+    margin-right: 25px;
+  }
+}
 
-// .Information_buttom_pol {
-//   grid-area: policy;
-//   color: #ffffff;
-//   opacity: 60%;
-//   size: 8px;
-//   font-family: "Open Sans";
-//   text-decoration: none;
-//   white-space: nowrap;
-// }
+@media screen and (max-width: 900px) {
+  .container-footer {
+    grid-template-areas:
+    "logo"
+    "menu"
+    "information"
+    "button"
+    "company"
+    "policy"
+    "agree";
+    grid-gap: 40px;
+  }
 
-// .Information_buttom_sogl {
-//   grid-area: agree;
-//   color: #ffffff;
-//   opacity: 60%;
-//   size: 8px;
-//   font-family: "Open Sans";
-//   text-decoration: none;
-//   white-space: nowrap;
-// }
+  .Information_buttom_pol,
+  .Information_buttom_sogl {
+    margin-top: -24px;
+    white-space: nowrap;
+  }
 
-// @media screen and (max-width: 1100px) {
-//   .footer {
-//     gap: 40px;
-//   }
-
-//   .container-footer {
-//     margin-left: 0px;
-//     margin-right: 0px;
-//   }
-// }
-
-// @media screen and (max-width: 1130px) {
-//   .light-emblem,
-//   .names_titles_footer,
-//   .Information_connection {
-//     margin-right: 25px;
-//   }
-// }
-
-// @media screen and (max-width: 800px) {
-//   .main-part,
-//   .additional-part {
-//     flex-direction: column;
-//   }
-
-//   .main-part {
-//     gap: 40px;
-//   }
-
-//   .additional_part {
-//     margin-top: 0px;
-//     gap: 16px;
-//     display: flex;
-//     flex-direction: column;
-//   }
-
-//   .Information_buttom_pol {
-//     padding-left: 0;
-//   }
-
-//   .footer {
-//     height: 633px;
-//   }
-
-//   .container-footer {
-//     margin: 40px;
-//     gap: 40px;
-//   }
-// }
+  .apply-footer {
+    justify-self: start;
+  }
+}
 </style>

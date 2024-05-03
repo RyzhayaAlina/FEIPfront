@@ -15,6 +15,13 @@ import ComponentBody from "~/components/ComponentBody.vue";
 <style>
 @import "reset-css";
 
+:root {
+  --font-title: Montserrat, sans-serif;
+  --font-text: Open Sans, sans-serif;
+
+  font-family: var(--font-text);
+}
+
 html,
 body {
   margin: 0;

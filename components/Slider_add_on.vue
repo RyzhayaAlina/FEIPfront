@@ -41,7 +41,7 @@ import Calendar from "assets/icons/Calendar.svg?skipsvgo";
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main_info_container {
   width: 100%;
   display: flex;
@@ -118,12 +118,4 @@ import Calendar from "assets/icons/Calendar.svg?skipsvgo";
   color: #666666;
   font-size: 20px;
 }
-
-// @media screen and (max-width: 950px) { 
-//     .grid_container {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 20px;
-//     }
-// }
 </style>

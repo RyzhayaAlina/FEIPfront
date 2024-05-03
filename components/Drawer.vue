@@ -8,7 +8,7 @@
   </button>
 </template>
 
-<style>
+<style scoped>
 .burger {
   position: relative;
   display: inline-block;

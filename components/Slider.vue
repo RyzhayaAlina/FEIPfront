@@ -90,22 +90,22 @@ const slides = [
 
 <style scoped lang="scss">
 .swiper {
-  max-width: 1440px;
-  margin-top: 40px;
+  max-width: 1264px;
+  width: 100%;
+  height: 100%;
   margin-bottom: 120px;
+  border-radius: 30px;
 }
 
 .slide_container {
   position: relative;
   width: 100%;
-  border-radius: 30px;
   margin: 0;
   background-color: rgb(123, 121, 121);
 }
 
 .slide_image {
   width: 100%;
-  border-radius: 30px;
   height: auto;
   object-fit: cover;
 }
@@ -115,7 +115,7 @@ const slides = [
   bottom: 0;
   left: 0;
   color: #fff;
-  box-sizing: border-box;
+  max-width: 460px;
   width: 100%;
   padding-inline: 144px;
   padding-bottom: 115px;
@@ -126,25 +126,15 @@ const slides = [
 }
 
 .slide_title {
-  font-family: "Montserrat";
-  line-height: 55px;
+  font-family: var(--font-title);
+  font-weight: 700;
   font-size: 46px;
-  margin-bottom: 12px;
 }
 
 .slide_second_title {
-  font-family: "Open Sans";
   line-height: 21px;
   font-size: 16px;
-}
-
-@media screen and (max-width: 1100px) {
-  .slide_title {
-    font-size: 35px;
-  }
-  .slide_second_title{
-    font-size: 13px;
-  }
+  margin-top: 12px;
 }
 
 @media screen and (max-width: 980px) {

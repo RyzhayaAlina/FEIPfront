@@ -6,33 +6,54 @@ import NewsAll from "./NewsAll.vue";
 </script>
 
 <template>
-  <main>
-    <div class="slider_container">
-      <Slider />
-    </div>
-    <div class="slider_add_on_container">
+  <main class="main-frame">
+    <section class="slider">
+      <div class="container">
+        <Slider />
+      </div>
+    </section>
+    <!-- <div class="container">
       <Slider_add_on />
-    </div>
+    </div> -->
     <!-- <div class="parts"> -->
-      <div class="projects_container">
+      <!-- <div class="container">
         <ProjectsAll />
       </div>
-      <div class="news_container">
+      <div class="container">
         <NewsAll />
-      </div>
+      </div> -->
     <!-- </div> -->
   </main>
 </template>
 
-<style lang="scss">
-.slider_container {
-  margin-left: 88px;
-  margin-right: 88px;
+<style lang="scss" scoped>
+.main-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
 }
 
-.slider_add_on_container {
-  margin-left: 88px;
-  margin-right: 88px;
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 1264px;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  margin: 40px 88px;
+  background-color: blue;
+  padding-inline: 1rem;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  background-color: pink;
+  max-height: 450px;
+  height: 100%;
+  width: 100%;
 }
 
 // .projects_container {
@@ -48,12 +69,7 @@ import NewsAll from "./NewsAll.vue";
 // }
 
 @media screen and (max-width: 760px) {
-  .slider_container {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-
-  .slider_add_on_container {
+  .container {
     margin-left: 16px;
     margin-right: 16px;
   }
