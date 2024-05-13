@@ -1,8 +1,8 @@
 <script setup>
-import Slider from "./Slider.vue";
-import Slider_add_on from "./Slider_add_on.vue";
-import ProjectsAll from "./ProjectsAll.vue";
-import NewsAll from "./NewsAll.vue";
+import Slider from "~/components/sliders/Slider.vue";
+import Description from "~/components/sliders/Description.vue";
+import ProjectsAll from "~/components/constants/ProjectsAll.vue";
+import NewsAll from "~/components/constants/NewsAll.vue";
 </script>
 
 <template>
@@ -12,17 +12,21 @@ import NewsAll from "./NewsAll.vue";
         <Slider />
       </div>
     </section>
-    <!-- <div class="container">
-      <Slider_add_on />
-    </div> -->
-    <!-- <div class="parts"> -->
-      <!-- <div class="container">
+    <section class="description">
+      <div class="container">
+        <Description />
+      </div>
+    </section>
+    <!-- <section class="projects-section">
+      <div class="container">
         <ProjectsAll />
       </div>
+    </section>
+    <section class="news">
       <div class="container">
         <NewsAll />
-      </div> -->
-    <!-- </div> -->
+      </div> 
+    </section>  -->
   </main>
 </template>
 
@@ -42,36 +46,43 @@ import NewsAll from "./NewsAll.vue";
   width: 100%;
   height: 100%;
   flex-grow: 1;
-  margin: 40px 88px;
-  background-color: blue;
   padding-inline: 1rem;
+  padding: 0;
 }
 
-.slider {
+.slider,
+.description {
   display: flex;
-  align-items: center;
-  background-color: pink;
-  max-height: 450px;
-  height: 100%;
+  justify-content: center;
   width: 100%;
 }
 
-// .projects_container {
-// margin-left: 88px;
-// margin-right: 88px;
-// background-color: #F5F7F3;
-// }
+.slider {
+  margin-top: 40px;
+  margin-bottom: 120px;
+}
 
-// .parts {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1px;
-// }
-
-@media screen and (max-width: 760px) {
-  .container {
-    margin-left: 16px;
-    margin-right: 16px;
+@media screen and (max-width: 810px) {
+  .slider {
+    margin-bottom: 80px;
   }
 }
+
+// .description {
+//   margin-top: 120px;
+//   background-color: red;
+// }
+
+// .projects-section {
+//   width: 100%;
+//   background-color: #F5F7F3;
+//   min-height: 541px;
+// }
+
+// @media screen and (max-width: 760px) {
+//   .container {
+//     margin-left: 16px;
+//     margin-right: 16px;
+//   }
+// }
 </style>

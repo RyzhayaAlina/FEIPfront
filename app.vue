@@ -7,7 +7,10 @@ import ComponentBody from "~/components/ComponentBody.vue";
 <template>
   <div class="root">
     <ComponentHeader class="header" />
-    <ComponentBody class="body" />
+
+    <!-- <ComponentBody class="body" /> -->
+    <!-- <NuxtPage /> -->
+
     <ComponentFooter class="footer" />
   </div>
 </template>

@@ -34,7 +34,6 @@
 }
 
 .button_news:active {
-//   box-shadow: 0 0 0 2px #029f59;
   border: 1px;
   border-color: #029f59;
   color: #029f59;

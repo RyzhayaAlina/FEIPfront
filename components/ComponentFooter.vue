@@ -1,6 +1,6 @@
 <script setup>
 import LightEmblem from "assets/icons/LightEmblem.svg?skipsvgo";
-import Button_Apply from "~/components/Button_Apply.vue";
+import Button_Apply from "~/components/buttons/ApplyButton.vue";
 const nav = [
   {
     url: "/projects",
@@ -54,6 +54,7 @@ const nav = [
 .main-footer {
   background: #254741;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   min-height: 264px;
   width: 100%;

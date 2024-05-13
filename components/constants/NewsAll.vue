@@ -7,8 +7,8 @@ import news3_1x from "~/assets/img/news3.jpg";
 import news3_2x from "~/assets/img/news3@2x.jpg";
 import news4_1x from "~/assets/img/news4.jpg";
 import news4_2x from "~/assets/img/news4@2x.jpg";
-import NewsStructure from "~/components/NewsStructure.vue";
-import Button_News from "~/components/Button_News.vue";
+import NewsStructure from "~/components/structures/NewsStructure.vue";
+import Button_News from "~/components/buttons/NewsButton.vue";
 
 const news = [
   {

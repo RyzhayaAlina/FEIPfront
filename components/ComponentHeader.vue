@@ -1,7 +1,7 @@
 <script setup>
 import DarkEmblem from "assets/icons/DarkEmblem.svg?skipsvgo";
-import Button_Apply from "~/components/Button_Apply.vue";
-import Drawer from "~/components/Drawer.vue";
+import Button_Apply from "~/components/buttons/ApplyButton.vue";
+import Drawer from "~/components/buttons/Drawer.vue";
 
 const nav = [
   {
@@ -50,8 +50,9 @@ const nav = [
 <style lang="scss" scoped>
 .header {
   height: 97px;
+  width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 .container-header {
   display: flex;

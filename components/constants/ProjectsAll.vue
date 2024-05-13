@@ -5,7 +5,7 @@ import project1_2x from "~/assets/img/project1_image_2x.jpg";
 import project2_1x from "~/assets/img/project2_image_1x.jpg";
 import project2_2x from "~/assets/img/project2_image_2x.jpg";
 
-import ProjectStructure from "~/components/ProjectStructure.vue";
+import ProjectStructure from "~/components/structures/ProjectStructure.vue";
 
 const projects = [
     {
