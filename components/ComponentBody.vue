@@ -1,98 +1,77 @@
-<script>
-
+<script setup>
+import Slider from "./Slider.vue";
+import Slider_add_on from "./Slider_add_on.vue";
+import ProjectsAll from "./ProjectsAll.vue";
+import NewsAll from "./NewsAll.vue";
 </script>
 
 <template>
-    <div class="base">
-        <!-- <div class="banner">
-            <p class="text_banner">Banner</p>
-        </div> -->
-        <div class="block_message">
-            <p class="hello">Hello, World!</p>
-        </div>
-        <!-- <div class="block_message">
-            <p class="look">Look at my website</p>
-        </div> -->
-        <!-- <div class="cards">
-            <p class="card">Here</p>
-            <p class="card">And here</p>
-        </div> -->
-    </div>
+  <main class="main-frame">
+    <section class="slider">
+      <div class="container">
+        <Slider />
+      </div>
+    </section>
+    <!-- <div class="container">
+      <Slider_add_on />
+    </div> -->
+    <!-- <div class="parts"> -->
+      <!-- <div class="container">
+        <ProjectsAll />
+      </div>
+      <div class="container">
+        <NewsAll />
+      </div> -->
+    <!-- </div> -->
+  </main>
 </template>
 
-<style lang='scss'>
-
-.base {
-    height: calc(100vh - 160px);
-    position: relative;
-    align-items: center;
-    display: table-cell;
-    vertical-align: middle;
+<style lang="scss" scoped>
+.main-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
 }
 
-@mixin card($fill: #adedc2) {
-    background: $fill;
-
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 1264px;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  margin: 40px 88px;
+  background-color: blue;
+  padding-inline: 1rem;
 }
 
-.banner {
-    @include card(#0e802c);
-    width: calc(100vw - 100px);
-    height: 60px;
-    margin-left: 50px;
-    margin-right: 50px;
-    position: relative;
-    align-items: center;
-    display: flex;
+.slider {
+  display: flex;
+  align-items: center;
+  background-color: pink;
+  max-height: 450px;
+  height: 100%;
+  width: 100%;
 }
 
-.text_banner {
-    font-family: 'Open Sans';
-    color: white;
-    font-size: 25px;
-    text-decoration: normal;
-    margin-left: 10px;
-}
+// .projects_container {
+// margin-left: 88px;
+// margin-right: 88px;
+// background-color: #F5F7F3;
+// }
 
-.block_message {
-    display: flex;
-    width: calc(100vw - 100px);
-    margin-left: 50px;
-    margin-right: 50px;
-    align-items: center;
-}
-.hello {
-    font-family: 'Montserrat';
-    color: black;
-    font-size: 30px;
-    text-decoration: bolder;
-    margin-left: 10px;
-}
+// .parts {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1px;
+// }
 
-.look {
-    font-family: 'Montserrat';
-    color: black;
-    font-size: 25px;
-    margin-left: 10px;
+@media screen and (max-width: 760px) {
+  .container {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
-
-.cards {
-    width: calc(100vw - 100px);
-    margin-left: 50px;
-    margin-right: 50px;
-    display: flex;
-}
-
-.card {
-    @include card();
-    font-family: 'Montserrat';
-    font-size: 20px;
-    height: 50px;
-    width: 110px;
-    align-items: center;
-    display: flex;
-    margin-right: 20px;
-    padding-left: 10px;
-}
-
 </style>
