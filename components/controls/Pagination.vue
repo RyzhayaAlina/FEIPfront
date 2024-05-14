@@ -4,28 +4,22 @@ import { PaginationEllipsis, PaginationFirst, PaginationLast, PaginationList, Pa
 </script>
 
 <template>
-  <PaginationRoot :total="100" :sibling-count="1" show-edges :default-page="2">
+  <PaginationRoot :total="100" :sibling-count="0" show-edges :default-page="1">
     <PaginationList v-slot="{ items }" class="PaginationList">
-      <PaginationFirst class="Button">
-        <Icon icon="radix-icons:double-arrow-left" />
-      </PaginationFirst>
-      <PaginationPrev :style="{ marginRight: 16 }" class="Button">
+      <PaginationPrev :style="{ marginRight: 16 }" class="Button-arrow">
         <Icon icon="radix-icons:chevron-left" />
       </PaginationPrev>
       <template v-for="(page, index) in items">
-        <PaginationListItem v-if="page.type === 'page'" :key="index" class="Button" :value="page.value">
+        <PaginationListItem v-if="page.type === 'page'" :key="index" class="Button-number" :value="page.value">
           {{ page.value }}
         </PaginationListItem>
         <PaginationEllipsis v-else :key="page.type" :index="index" class="PaginationEllipsis">
           &#8230;
         </PaginationEllipsis>
       </template>
-      <PaginationNext :style="{ marginLeft: 16 }" class="Button">
+      <PaginationNext :style="{ marginLeft: 16 }" class="Button-arrow">
         <Icon icon="radix-icons:chevron-right" />
       </PaginationNext>
-      <PaginationLast class="Button">
-        <Icon icon="radix-icons:double-arrow-right" />
-      </PaginationLast>
     </PaginationList>
   </PaginationRoot>
 </template>
@@ -37,30 +31,56 @@ button {
   all: unset;
 }
 
-.Button{
+.Button-arrow{
   text-align: center;
   font-size: 15px;
   line-height: 1;
   align-items: center;
   justify-content: center;
-  height: 2.25rem;
-  width: 2.25rem;
-  border-radius: 0.25rem; 
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 48px;
+  width: 48px;
+  border: 1px solid #029F59;
+  border-radius: 10px;
+  fill: #254741;
   cursor: pointer;
 }
 
-.Button:disabled {
-  opacity: .5
+.Button-arrow:disabled {
+  background-color: #FAFAFA;
+  border: 1px solid #D7D7D7;
+  fill: #D7D7D7;
 }
 
-.Button:hover{
-  background-color: rgb(255 255 255 / 0.1)
+.Button-arrow:hover{
+  background-color: #254741;
+  fill: white;
+  border: none;
 }
 
-.Button[data-selected]{ 
-  background-color: rgb(255 255 255);
-  color: black;
+.Button-arrow:active{ 
+  background-color: #029F59;
+  fill: white;
+  border: none;
+}
+
+.Button-arrow:focus {
+  background-color: #EEEEEE;
+  border: 1px solid #9D9C9C;
+  fill: #BDBDBD;
+}
+
+.Button-number {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border: 1px solid #029F59;
+  border-radius: 10px;
+  fill: #254741;
+  cursor: pointer;
 }
 
 .PaginationEllipsis{
@@ -68,14 +88,13 @@ button {
   height: 2.25rem;
   width: 2.25rem;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .PaginationList{
   display: flex;
   align-items: center;
   gap: 0.25rem; 
-  color: rgb(255 255 255)
+  color: green;
 }
-
 </style>

@@ -17,7 +17,7 @@ import NewsAll from "~/components/constants/NewsAll.vue";
         <Description />
       </div>
     </section>
-    <!-- <section class="projects-section">
+    <section class="projects">
       <div class="container">
         <ProjectsAll />
       </div>
@@ -26,7 +26,7 @@ import NewsAll from "~/components/constants/NewsAll.vue";
       <div class="container">
         <NewsAll />
       </div> 
-    </section>  -->
+    </section> 
   </main>
 </template>
 
@@ -51,7 +51,9 @@ import NewsAll from "~/components/constants/NewsAll.vue";
 }
 
 .slider,
-.description {
+.description,
+.projects,
+.news {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -73,11 +75,10 @@ import NewsAll from "~/components/constants/NewsAll.vue";
 //   background-color: red;
 // }
 
-// .projects-section {
-//   width: 100%;
-//   background-color: #F5F7F3;
-//   min-height: 541px;
-// }
+.projects {
+  margin-top: 120px;
+  background-color: #F5F7F3;
+}
 
 // @media screen and (max-width: 760px) {
 //   .container {
