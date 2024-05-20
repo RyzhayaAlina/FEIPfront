@@ -1,13 +1,13 @@
 <script>
 import ComponentHeader from "~/components/ComponentHeader.vue";
 import ComponentFooter from "~/components/ComponentFooter.vue";
-import ComponentBody from "~/components/ComponentBody.vue";
+// import ComponentBody from "~/components/ComponentBody.vue";
 </script>
 
 <template>
   <div class="root">
     <ComponentHeader class="header" />
-    <ComponentBody class="body" />
+    <NuxtPage />
     <ComponentFooter class="footer" />
   </div>
 </template>

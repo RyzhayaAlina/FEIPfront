@@ -1,20 +1,19 @@
 <script></script>
 
 <template>
-  <button class="button_news">Все новости</button>
+  <NuxtLink to="/news" class="button_news">Все новости</NuxtLink>
 </template>
 
 <style lang="scss" scoped>
 .button_news {
   display: inline-block;
-  width: 141px;
-  height: 49px;
-  //   gap: 10px;
+  padding: 16px 24px;
+  text-decoration: none;
   border-radius: 10px;
   font-family: "Montserrat";
-  text-align: center;
   font-size: 14px;
   font-weight: 600;
+  color: black;
 }
 
 .button_news:default {
@@ -34,7 +33,6 @@
 }
 
 .button_news:active {
-//   box-shadow: 0 0 0 2px #029f59;
   border: 1px;
   border-color: #029f59;
   color: #029f59;

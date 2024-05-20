@@ -40,8 +40,10 @@ defineProps({
   display: flex;
   flex-flow: column;
   gap: 16px;
-  min-width: 314px;
-  max-width: 314px;
+  max-width: 304px;
+  width: 100%;
+  max-height: 343px;
+  height: 100%;
 }
 
 .picture {

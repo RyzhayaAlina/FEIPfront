@@ -7,8 +7,8 @@ import news3_1x from "~/assets/img/news3.jpg";
 import news3_2x from "~/assets/img/news3@2x.jpg";
 import news4_1x from "~/assets/img/news4.jpg";
 import news4_2x from "~/assets/img/news4@2x.jpg";
-import NewsStructure from "~/components/NewsStructure.vue";
-import Button_News from "~/components/Button_News.vue";
+import NewsStructure from "~/components/structures/NewsStructure.vue";
+import Button_News from "~/components/buttons/NewsButton.vue";
 
 const news = [
   {
@@ -58,7 +58,7 @@ const news = [
   <div class="news_">
     <div class="section_news_title">
       <p class="news_title">Новости</p>
-        <div class="all_news_button"><Button_News /></div>
+      <div class="all_news_button"><Button_News /></div>
     </div>
     <div class="news_list">
       <NewsStructure
@@ -71,6 +71,7 @@ const news = [
     </div>
   </div>
 </template>
+
 <style scoped lang="scss">
 .news_ {
   position: relative;
@@ -84,8 +85,7 @@ const news = [
   display: flex;
   align-items: center;
   margin-bottom: 32px;
-  // justify-content: space-between;
-  gap: 950px;
+  justify-content: space-between;
 }
 
 .news_title {
@@ -99,6 +99,8 @@ const news = [
   flex-flow: row;
   gap: 16px;
   overflow: auto;
+  max-height: 343px;
+  height: 100%;
 }
 
 .all_news_button {

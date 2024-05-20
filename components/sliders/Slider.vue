@@ -18,10 +18,8 @@
           />
         </picture>
         <figcaption class="slide_text">
-          <div class="slide_text_items">
             <h3 class="slide_title">{{ slide.title }}</h3>
             <p class="slide_second_title">{{ slide.text }}</p>
-          </div>
         </figcaption>
       </figure>
     </SwiperSlide>
@@ -46,6 +44,8 @@ import slide3_portrait_1x from "~/assets/img/slide-3-portrait.jpg";
 import slide3_portrait_2x from "~/assets/img/slide-3-portrait@2x.jpg";
 import slide3_landscape_1x from "~/assets/img/slide-3-landscape.jpg";
 import slide3_landscape_2x from "~/assets/img/slide-3-landscape@2x.jpg";
+
+import SliderControls from "./SliderControls.vue";
 
 const slides = [
   {
@@ -90,23 +90,22 @@ const slides = [
 
 <style scoped lang="scss">
 .swiper {
-  max-width: 1264px;
   width: 100%;
+  min-height: 450px;
   height: 100%;
-  margin-bottom: 120px;
   border-radius: 30px;
 }
 
 .slide_container {
   position: relative;
   width: 100%;
-  margin: 0;
+  height: 100%;
   background-color: rgb(123, 121, 121);
 }
 
 .slide_image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -121,10 +120,6 @@ const slides = [
   padding-bottom: 115px;
 }
 
-.slide_text_items {
-  max-width: 460px;
-}
-
 .slide_title {
   font-family: var(--font-title);
   font-weight: 700;
@@ -137,12 +132,40 @@ const slides = [
   margin-top: 12px;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1300px) {
+  .swiper {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .swiper {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper {
+    max-height: 391px;
+  }
+
+  .slide_text {
+    padding-inline: 24px;
+    padding-bottom: 30px;
+    max-width: 296px;
+  }
+
   .slide_title {
-    font-size: 26px;
+    font-size: 30px;
   }
   .slide_second_title{
-    font-size: 12px;
+    font-size: 16px;
+  }
+
+  .slider-controls {
+    display: none;
   }
 }
 </style>

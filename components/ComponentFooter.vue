@@ -1,6 +1,6 @@
 <script setup>
-import LightEmblem from "assets/icons/LightEmblem.svg?skipsvgo";
-import Button_Apply from "~/components/Button_Apply.vue";
+import LightEmblem from "~/assets/icons/LightEmblem.svg?skipsvgo";
+import Button_Apply from "~/components/buttons/ApplyButton.vue";
 const nav = [
   {
     url: "/projects",
@@ -23,9 +23,9 @@ const nav = [
       <LightEmblem class="light-emblem" />
       <ul class="names_titles_footer">
         <li v-for="item in nav">
-          <a :href="item.url">
+          <NuxtLink :to="item.url">
             {{ item.label }}
-          </a>
+          </NuxtLink>
         </li>
       </ul>
       <div class="Information_connection">
@@ -54,6 +54,7 @@ const nav = [
 .main-footer {
   background: #254741;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   min-height: 264px;
   width: 100%;
