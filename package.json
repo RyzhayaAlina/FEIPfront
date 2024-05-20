@@ -16,7 +16,8 @@
     "reset-css": "^5.0.2",
     "truncate-html": "^1.1.1",
     "vue": "^3.4.19",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue-yandex-maps": "^2.1.2"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.1",

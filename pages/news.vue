@@ -9,6 +9,7 @@ import news4_1x from "~/assets/img/news4.jpg";
 import news4_2x from "~/assets/img/news4@2x.jpg";
 import NewsStructure from "~/components/structures/NewsStructure.vue";
 import Pagination from "~/components/controls/Pagination.vue";
+import BreadCrumb from '~/components/structures/BreadCrumb.vue';
 
 const news = [
   {
@@ -136,10 +137,7 @@ const news = [
 
 <template>
   <div class="news-wrapper">
-    <ul class="breadcrumb">
-      <li><NuxtLink to="/" class="link-to-main">Главная</NuxtLink></li>
-      <li class="active">/ Новости</li>
-    </ul>
+    <BreadCrumb activePage='Новости' />
     <h1 class="news_title">Новости</h1>
     <div class="news_list">
       <NewsStructure
@@ -166,23 +164,6 @@ const news = [
 ul, li, h1 {
   margin: 0;
   padding: 0;
-}
-
-.breadcrumb {
-  display: flex;
-  margin-top: 40px;
-  margin-left: 88px;
-}
-
-.link-to-main {
-  text-decoration: none;
-  color: #029F59;
-  font-size: 20px;
-}
-
-.active {
-  color: #969595;
-  font-size: 20px;
 }
 
 .news_title {
