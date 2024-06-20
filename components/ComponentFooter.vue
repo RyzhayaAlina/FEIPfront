@@ -1,6 +1,9 @@
 <script setup>
 import LightEmblem from "~/assets/icons/LightEmblem.svg?skipsvgo";
 import Button_Apply from "~/components/buttons/ApplyButton.vue";
+import { mockContacts } from '~/mock/contacts';
+
+const { phone, email, address } = mockContacts;
 const nav = [
   {
     url: "/projects",
@@ -29,15 +32,14 @@ const nav = [
         </li>
       </ul>
       <div class="Information_connection">
-        <a class="Information_tel_mail_loc" href="tel:88001234567"
-          ><SvgoPhoneIcon class="icons_color" />+7 (900) 900-90-90</a
+        <a class="Information_tel_mail_loc" :href='`tel:${phone.value}`'
+          ><SvgoPhoneIcon class="icons_color" />{{ phone.label }}</a
         >
-        <a class="Information_tel_mail_loc" href="mailto:info@gmail.com"
-          ><SvgoMessageIcon class="icons_color" />info@gmail.com</a
+        <a class="Information_tel_mail_loc" :href='`mailto:${email}`'
+          ><SvgoMessageIcon class="icons_color" />{{ email }}</a
         >
         <a class="Information_tel_mail_loc"
-          ><SvgoAdressIcon class="icons_color" />г. Владивосток ул. Выселковая
-          49, стр. 3</a
+          ><SvgoAdressIcon class="icons_color" />{{ address }}</a
         >
       </div>
       <div class="apply-footer"><Button_Apply /></div>

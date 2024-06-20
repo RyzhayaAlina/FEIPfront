@@ -2,7 +2,9 @@
 import DarkEmblem from "~/assets/icons/DarkEmblem.svg?skipsvgo";
 import Button_Apply from "~/components/buttons/ApplyButton.vue";
 import Drawer from "~/components/buttons/Drawer.vue";
+import { mockContacts } from '~/mock/contacts';
 
+const { phone } = mockContacts
 const nav = [
   {
     url: "/projects",
@@ -36,9 +38,7 @@ const nav = [
       </div>
       <div class="data">
         <div class="box_number">
-          <a class="number" href="tel:88001234567">
-            <SvgoPhoneIcon class="icon_number" />+7 (900) 900-90-90</a
-          >
+          <a class='number' :href='`tel:${phone.value}`'><SvgoPhoneIcon class="icon_number" />{{ phone.label }}</a>
         </div>
         <div class="apply-button"><Button_Apply /></div>
         <Drawer class="drawer" />

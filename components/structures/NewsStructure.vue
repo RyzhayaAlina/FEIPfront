@@ -30,7 +30,6 @@ defineProps({
     <div class="block_description_news">
       <h4 class="title">{{ title }}</h4>
       <span class="description" v-html='truncate(description, 58)'></span>
-      <!-- <span class="description" v-html="description"></span> -->
     </div>
   </div>
 </template>
@@ -48,7 +47,6 @@ defineProps({
 
 .picture {
   width: 100%;
-  height: 200px;
 }
 
 .image {

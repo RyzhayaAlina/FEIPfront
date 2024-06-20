@@ -27,7 +27,7 @@ import { Icon } from "@iconify/vue";
               <input id="phone" class="Input" placeholder="Телефон" />
             </fieldset>
             <fieldset class="Fieldset">
-              <input id="message" class="Input" placeholder="Сообщение" />
+              <input id="message" class="Input message" placeholder="Сообщение" />
             </fieldset>
           </div>
         </div>
@@ -62,6 +62,7 @@ input {
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .DialogContent {
@@ -73,10 +74,9 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 448px;
-  max-height: 603px;
-  padding: 25px;
+  max-width: 353px;
+  min-height: 499px;
+  padding: 48px 47px 56px 48px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
@@ -111,12 +111,9 @@ input {
 
 .Fieldset {
   width: 353px;
-  // height: 58px;
   background-color: #ffffff;
   border-radius: 5px;
   margin-bottom: 15px;
-  // overflow-wrap: break-word;
-  // white-space: normal;
 }
 
 .Fieldset:hover {
@@ -124,7 +121,6 @@ input {
 }
 
 .Input {
-  width: 353px;
   flex: 1;
   display: inline-flex;
   align-items: center;
@@ -137,8 +133,10 @@ input {
   color: black;
   font-family: "Montserrat";
   height: 35px;
-  // display: block;
-  // overflow-wrap: break-word;
+}
+
+.Input.message {
+  padding-bottom: 58.5px;
 }
 
 .Input:focus {
@@ -207,10 +205,6 @@ input {
   height: 19px;
 }
 
-// .button_apply:default {
-//   background-color: #2b2f34;
-// }
-
 .button_apply:focus {
   box-shadow: 0 0 0 2px #029f59;
   background-color: #254741;
@@ -242,8 +236,8 @@ input {
   background-color: #a4d0bf;
   color: #029f59;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 24px;
+  right: 24px;
   border-radius: 6px;
 }
 .IconButton:hover {
